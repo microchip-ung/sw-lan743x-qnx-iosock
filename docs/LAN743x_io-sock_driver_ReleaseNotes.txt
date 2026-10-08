@@ -1,0 +1,58 @@
+LAN743x QNX io-sock Driver package - lan743x_qnx_io-sock_driver_v20260415
+==================================
+
+This software package contains QNX 8 and later io-sock drivers for LAN743x and LAN887x devices.
+
+Contents:
+--------
+A. Software components
+B. LAN743x driver
+C. LAN887x Phy driver
+D. Known issues/Limitations
+
+A. Software Components
+-----------------------
+
+lan743x			: LAN743x device driver.
+phys/lan887x	: LAN8870/LAN8871/LAN8872 phy driver
+docs			: This document and User guide.
+
+B.  LAN7430 driver
+------------------
+Version				: 0.1.1
+Device support		: LAN7430 and LAN743x
+Feature Supported	: Basic driver, mount/unmount, hw address setting
+					  interrupt handling
+
+Revision History:
+v0.1.1 - 4/15/2026
+- Fix stats counter race between CTX_LOCK and txq->ift_mtx
+- Use iflib 500ms interval timer for periodic stats updates
+- Increased LRST polling interval and timeout (500us / 500ms)
+- Added debug prints for PMT_CTL, driver init path, and h/w lite reset
+v0.1.0 - 3/26/2026
+- Basic driver functionality, performance tested, hw address, link change
+v0.0.1 - 3/10/2026
+- Basic driver functionality, performance tested
+
+C.  LAN887x Phy driver
+----------------------
+Version				: 0.1.1
+Device support		: LAN8870/LAN8871/LAN8872
+Feature Supported	: 100/1000 forced speed modes, Forced Master/slave setting
+					  auto-neg, Cable diag, SQI
+Revision History:
+v0.1.1 - 4/15/2026
+- Fix cable length calculation issue
+- Fix cable diag poll timer issue
+- Avoid error return when cable diag test is pending
+- Fix 100M forced link issue
+- Fix 100M auto-negotiation issues
+v0.1.0 - 3/26/2026
+- Cable diag, SQI, module parameters
+v0.0.1 - 3/10/2026
+- Basic driver functionality, performance tested
+
+H: Known Issues/Limitations
+---------------------------
+NA
