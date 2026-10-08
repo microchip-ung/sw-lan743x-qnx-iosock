@@ -1,1 +1,1 @@
-# sw-lan743x-qnx-iosock
+QNX io-sock driver for LAN743x and Phys
